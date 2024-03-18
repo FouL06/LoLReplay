@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v4.js"></script>
+    <script src="https://d3js.org/topojson.v3.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/mastery.js"></script>
+    <script src="js/winPercMap.js"></script>
+    <script src="js/KDA.js"></script>
+    <title>LoL-Replay</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">LoL-Replay</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#mastery-chart">Champion Mastery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#calendar-chart">Calendar History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#match-chart">Match Trends</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="process-book.pdf">Process Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://youtu.be/AfEGqnXr2U0">Demo Video</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="charts-container">
+      <div id="mastery-chart-container">
+        <svg id="mastery-chart"></svg>
+      </div>
+      <div id="current-champion-mastery"></div>
+      <div id="mastery-slider-container">
+        <div id="lower-slider-label">Lower Bound Value:</div>
+        <input
+          type="range"
+          id="lower-bound-slider"
+          class="slider"
+          step="1000"
+        />
+        <div id="upper-slider-label">Upper Bound Value:</div>
+        <input
+          type="range"
+          id="upper-bound-slider"
+          class="slider"
+          step="1000"
+        />
+      </div>
+      <div id="calendar-chart-container">
+        <svg id="calendar-chart"></svg>
+      </div>
+      <div id="match-chart-container">
+        <svg id="match-chart"></svg>
+      </div>
+    </div>
+
+    <footer class="py-3 bg-dark">
+      <ul class="nav justify-content-center pb-3 mb-3">
+        <li class="nav-item">
+          <a href="#mastery-chart" class="nav-link px-2 text-muted"
+            >Champion Mastery</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="#calendar-chart" class="nav-link px-2 text-muted"
+            >Calendar History</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="#match-chart" class="nav-link px-2 text-muted"
+            >Match Trends</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="process-book.pdf" class="nav-link px-2 text-muted"
+            >Process Book</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-muted">
+        © 2023 LoL-Replay by Ashton Foulger, Kevin Xue
+      </p>
+    </footer>
+  </body>
+</html>
